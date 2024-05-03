@@ -1,7 +1,10 @@
 # redacted_examples
 
 This is a repository of JSON file containing examples of RDAP responses using the
-RFC 9537 redaction extension.
+RFC 9537 redaction extension. It's purpose is to provide examples for testing.
+
+These files may be used in integrated test suites or with the
+[ICANN RDAP Server](https://github.com/icann/icann-rdap/blob/main/icann-rdap-srv/README.md).
 
 The following describes the files.
 
