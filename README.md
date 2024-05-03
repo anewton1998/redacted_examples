@@ -85,3 +85,32 @@ example-8.net (example-8_net.json)
 ----------------------------------
 
 Same as example-7.net except "registrant" is the last role in the roles array.
+
+example-9.net (example-8_net.json)
+----------------------------------
+
+This example is a domain with only a registrant entity. It has the following redaction:
+1. email of the registrant by replacementValue
+
+example-10.net (example-10_net.json)
+------------------------------------
+
+Same as example-9.net, however the registrant doesn't have an email address but a
+contact-uri, and the redaction is a replacementValue of the registrant's email with
+the contact-uri (from Figure 9 in RFC 9537).
+
+
+example-11.net (example-11_net.json)
+------------------------------------
+
+This example is similar to example-9.net, except the email address is an empty string
+and there are two overlapping redactions:
+1. removal of the registrant's email (the entire JSON object).
+1. redaction of the registrant's email address by emptyValue (the specific JSON string).
+
+
+example-12.net (example-12_net.json)
+------------------------------------
+
+This is the same as example-1.net except all the redactions are illegal in that when
+they should have a `postPath` they have a `prePath` and vice-versa.
