@@ -106,7 +106,7 @@
   "redacted": [
     {
       "name": {
-        "description": "Registrant Email"
+        "description": "Registrar Email"
       },
       "postPath": "$.entities[?(@.roles[0]=='registrar')].vcardArray[1][?(@[0]=='email')][3]",
       "method": "replacementValue",
