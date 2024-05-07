@@ -92,8 +92,8 @@ Same as example-7.net except "registrant" is the last role in the roles array.
 example-9.net (example-8_net.json)
 ----------------------------------
 
-This example is a domain with only a registrant entity. It has the following redaction:
-1. email of the registrant by replacementValue
+This example is a domain with only a registrar entity. It has the following redaction:
+1. email of the registrar by replacementValue
 
 example-10.net (example-10_net.json)
 ------------------------------------

@@ -108,7 +108,7 @@
       "name": {
         "description": "Registrant Email"
       },
-      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='email')][3]",
+      "postPath": "$.entities[?(@.roles[0]=='registrar')].vcardArray[1][?(@[0]=='email')][3]",
       "method": "replacementValue",
       "reason": {
         "description": "Server policy"
