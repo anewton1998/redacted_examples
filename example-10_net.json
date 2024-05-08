@@ -106,10 +106,10 @@
   "redacted": [
     {
       "name": {
-        "description": "Registrant Email"
+        "description": "Registrar Email"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='email')]",
-      "replacementPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='contact-uri')]",
+      "prePath": "$.entities[?(@.roles[0]=='registrar')].vcardArray[1][?(@[0]=='email')]",
+      "replacementPath": "$.entities[?(@.roles[0]=='registrar')].vcardArray[1][?(@[0]=='contact-uri')]",
       "method": "replacementValue",
       "reason": {
         "description": "Server policy"
