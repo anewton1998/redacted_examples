@@ -6,6 +6,14 @@ RFC 9537 redaction extension. It's purpose is to provide examples for testing.
 These files may be used in integrated test suites or with the
 [ICANN RDAP Server](https://github.com/icann/icann-rdap/blob/main/icann-rdap-srv/README.md).
 
+A Dockerfile is supplied for use with 
+[ICANN RDAP Server](https://github.com/icann/icann-rdap/blob/main/icann-rdap-srv/README.md).
+To use the Dockerfile:
+```
+docker buildx build --tag "rdap-srv" .
+docker run --network host rdap-srv
+```
+
 The following describes the files.
 
 example-1.net (example-1_net.json)
