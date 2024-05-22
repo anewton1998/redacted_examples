@@ -30,7 +30,7 @@
     {
       "objectClassName": "entity",
       "handle": "123",
-      "roles": [ "registrar" ],
+      "roles": [ "registrant" ],
       "publicIds": [
         { "type": "IANA Registrar ID", "identifier": "1" }
       ],

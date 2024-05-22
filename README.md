@@ -125,3 +125,35 @@ example-12.net (example-12_net.json)
 
 This is the same as example-1.net except all the redactions are illegal in that when
 they should have a `postPath` they have a `prePath` and vice-versa.
+
+example-13.net (example-13_net.json)
+------------------------------------
+
+This is the same as example-1.net but the registrant street, city, and postal code
+are now in the unstructured address.
+
+example-14.net (example-14_net.json)
+------------------------------------
+
+This is the same as example-1.net however the registrant now has a voice and fax,
+each with an extension. It has the following four additional redactions:
+
+1. Registrant Phone by removal
+1. Registrant Phone Extension be removal
+1. Registrant Fax by removal
+1. Registrant Fax Extension by removal
+
+The phone and phone extension redactions overlap, and the fax and fax extension redactions
+overlap as well.
+
+example-15.net (example-15_net.json)
+------------------------------------
+
+This is the same as example-14.net except the redactions have been changed from removal
+to partial value.
+
+example-16.net (example-16_net.json)
+------------------------------------
+
+This is the same as example-15.net the registrant and technical contact are the
+same, and redactions have been changed so the JSONPath impacts both roles.
