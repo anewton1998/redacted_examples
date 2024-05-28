@@ -157,3 +157,15 @@ example-16.net (example-16_net.json)
 
 This is the same as example-15.net the registrant and technical contact are the
 same, and redactions have been changed so the JSONPath impacts both roles.
+
+example-17.net (example-17_net.json)
+------------------------------------
+
+This is the same as example-2.net, except the name selectors using the brackets use
+a double quoted string instead of single coated string.
+
+example-18.net (example-18_net.json)
+------------------------------------
+
+This is the same as example-1.net, except the selector comparisons used double quotes
+instead of single quotes.
