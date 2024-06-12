@@ -118,7 +118,7 @@
       "name": {
         "description": "Registrant Email"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='email')][3]",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='email')][3]",
       "method": "emptyValue",
       "reason": {
         "description": "Server policy"

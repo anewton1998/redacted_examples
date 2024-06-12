@@ -169,3 +169,20 @@ example-18.net (example-18_net.json)
 
 This is the same as example-1.net, except the selector comparisons used double quotes
 instead of single quotes.
+
+example-19.net (example-19_net.json)
+----------------------------------
+
+The is example-4.net except some of the redactions stated are not actually
+redacted. This is for testing when the server says something is redacted but
+it is not.
+
+The redactions are:
+
+For each top level entity (i.e. not the registrar abuse):
+1. name  by emptyValue
+1. organization by removal
+1. street address by emptyValue
+1. city by emptyValue
+1. postal code by emptyValue
+1. email by removal

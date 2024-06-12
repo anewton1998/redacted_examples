@@ -4,7 +4,7 @@
     "redacted"
   ],
   "objectClassName": "domain",
-  "ldhName": "example-16.net",
+  "ldhName": "example-19.net",
   "secureDNS": { "delegationSigned": false },
   "notices": [
     {
@@ -131,7 +131,7 @@
       "objectClassName": "entity",
       "handle": "XXXX",
       "roles": [
-        "technical", "registrant"
+        "registrant"
       ],
       "vcardArray": [
         "vcard",
@@ -161,22 +161,50 @@
               "",
               "Canada"
             ]
+          ]
+        ]
+      ]
+    },
+    {
+      "objectClassName": "entity",
+      "handle": "YYYY",
+      "roles": [
+        "technical"
+      ],
+      "vcardArray": [
+        "vcard",
+        [
+          [
+            "version",
+            {},
+            "text",
+            "4.0"
           ],
           [
-            "tel",
-            {
-              "type": "voice"
-            },
-            "uri",
-            "tel:+1.7035555555;ext=1234"
+            "fn",
+            {},
+            "text",
+            ""
           ],
           [
-            "tel",
-            {
-              "type": "fax"
-            },
-            "uri",
-            "tel:+1.7035555556;ext=1234"
+            "org",
+            {},
+            "text",
+            "Example Inc."
+          ],
+          [
+            "adr",
+            {},
+            "text",
+            [
+              "",
+              "Suite 1234",
+              "4321 Rue Somewhere",
+              "Quebec",
+              "QC",
+              "G1V 2M2",
+              "Canada"
+            ]
           ]
         ]
       ]
@@ -199,20 +227,9 @@
   "redacted": [
     {
       "name": {
-        "description": "Registry Domain ID"
+        "description": "All top level entity Names"
       },
-      "prePath": "$.handle",
-      "pathLang": "jsonpath",
-      "method": "removal",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Registrant Name"
-      },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='fn')][3]",
+      "postPath": "$.entities[*].vcardArray[1][?(@[0]=='fn')][3]",
       "pathLang": "jsonpath",
       "method": "emptyValue",
       "reason": {
@@ -221,9 +238,9 @@
     },
     {
       "name": {
-        "description": "Registrant Organization"
+        "description": "all top level entity Organizations"
       },
-      "prePath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='org')]",
+      "prePath": "$.entities[*].vcardArray[1][?(@[0]=='org')]",
       "pathLang": "jsonpath",
       "method": "removal",
       "reason": {
@@ -232,9 +249,9 @@
     },
     {
       "name": {
-        "description": "Registrant Street"
+        "description": "all top level entity Street"
       },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='adr')][3][:3]",
+      "postPath": "$.entities[*].vcardArray[1][?(@[0]=='adr')][3][:3]",
       "pathLang": "jsonpath",
       "method": "emptyValue",
       "reason": {
@@ -243,9 +260,9 @@
     },
     {
       "name": {
-        "description": "Registrant City"
+        "description": "all top level entity City"
       },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='adr')][3][3]",
+      "postPath": "$.entities[*].vcardArray[1][?(@[0]=='adr')][3][3]",
       "pathLang": "jsonpath",
       "method": "emptyValue",
       "reason": {
@@ -254,9 +271,9 @@
     },
     {
       "name": {
-        "description": "Registrant Postal Code"
+        "description": "all top level entity Postal Code"
       },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='adr')][3][5]",
+      "postPath": "$.entities[*].vcardArray[1][?(@[0]=='adr')][3][5]",
       "pathLang": "jsonpath",
       "method": "emptyValue",
       "reason": {
@@ -265,9 +282,9 @@
     },
     {
       "name": {
-        "description": "Registrant Email"
+        "description": "all top level entity Email"
       },
-      "prePath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[0]=='email')]",
+      "prePath": "$.entities[*].vcardArray[1][?(@[0]=='email')]",
       "method": "removal",
       "reason": {
         "description": "Server policy"
@@ -275,101 +292,12 @@
     },
     {
       "name": {
-        "description": "Registrant Phone"
+        "description": "all top level entity Phone"
       },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[1].type=='voice')][3][3]",
-      "method": "partialValue",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Registrant Phone Ext"
-      },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[1].type=='voice')][3][3]",
-      "method": "partialValue",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Registrant Fax"
-      },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[1].type=='fax')][3][3]",
-      "method": "partialValue",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Registrant Fax Ext"
-      },
-      "postPath": "$.entities[?(@.roles[*]=='registrant')].vcardArray[1][?(@[1].type=='fax')][3][3]",
-      "method": "partialValue",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Technical Name"
-      },
-      "postPath": "$.entities[?(@.roles[*]=='technical')].vcardArray[1][?(@[0]=='fn')][3]",
-      "method": "emptyValue",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Technical Email"
-      },
-      "prePath": "$.entities[?(@.roles[*]=='technical')].vcardArray[1][?(@[0]=='email')]",
+      "prePath": "$.entities[*].vcardArray[1][?(@[1].type=='voice')]",
       "method": "removal",
       "reason": {
         "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Technical Phone"
-      },
-      "prePath": "$.entities[?(@.roles[*]=='technical')].vcardArray[1][?(@[1].type=='voice')]",
-      "method": "removal",
-      "reason": {
-        "description": "Server policy"
-      }
-    },
-    {
-      "name": {
-        "description": "Technical Fax"
-      },
-      "prePath": "$.entities[?(@.roles[*]=='technical')].vcardArray[1][?(@[1].type=='fax')]",
-      "reason": {
-        "description": "Client request"
-      }
-    },
-    {
-      "name": {
-        "description": "Administrative Contact"
-      },
-      "prePath": "$.entities[?(@.roles[0]=='administrative')]",
-      "method": "removal",
-      "reason": {
-        "description": "Refer to the technical contact"
-      }
-    },
-    {
-      "name": {
-        "description": "Billing Contact"
-      },
-      "prePath": "$.entities[?(@.roles[0]=='billing')]",
-      "method": "removal",
-      "reason": {
-        "description": "Refer to the registrant contact"
       }
     }
   ]

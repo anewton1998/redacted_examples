@@ -47,7 +47,7 @@
             "fn",
             {},
             "text",
-            "Example Registrar Inc."
+            ""
           ],
           [
             "adr",
@@ -56,34 +56,12 @@
             [
               "",
               "Suite 100",
-              "123 Example Dr.",
-              "Dulles",
+              "",
+              "",
               "VA",
-              "20166-6503",
+              "",
               "US"
             ]
-          ],
-          [
-            "email",
-            {},
-            "text",
-            "contact@organization.example"
-          ],
-          [
-            "tel",
-            {
-              "type": "voice"
-            },
-            "uri",
-            "tel:+1.7035555555"
-          ],
-          [
-            "tel",
-            {
-              "type": "fax"
-            },
-            "uri",
-            "tel:+1.7035555556"
           ]
         ]
       ],
@@ -187,22 +165,16 @@
             ""
           ],
           [
-            "org",
-            {},
-            "text",
-            "Example Inc."
-          ],
-          [
             "adr",
             {},
             "text",
             [
               "",
               "Suite 1234",
-              "4321 Rue Somewhere",
-              "Quebec",
+              "",
+              "",
               "QC",
-              "G1V 2M2",
+              "",
               "Canada"
             ]
           ]
