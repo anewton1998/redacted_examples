@@ -138,13 +138,10 @@ example-14.net (example-14_net.json)
 This is the same as example-1.net however the registrant now has a voice and fax,
 each with an extension. It has the following four additional redactions:
 
-1. Registrant Phone by removal
-1. Registrant Phone Extension be removal
-1. Registrant Fax by removal
-1. Registrant Fax Extension by removal
-
-The phone and phone extension redactions overlap, and the fax and fax extension redactions
-overlap as well.
+1. Registrant Phone by partial value
+1. Registrant Phone Extension be partial value
+1. Registrant Fax by partial value
+1. Registrant Fax Extension by partial value
 
 example-15.net (example-15_net.json)
 ------------------------------------
@@ -186,3 +183,17 @@ For each top level entity (i.e. not the registrar abuse):
 1. city by emptyValue
 1. postal code by emptyValue
 1. email by removal
+
+192.168.0.1 (example-20_net.json)
+----------------------------------
+
+Or really any ip between 192.168.0.0 to 192.168.255.255. (e.g. /ip/192.168.0.1)
+
+This is example-1.net but as an IP Network. All the entities and their redactions are the same.
+
+AS65536 (example-21_net.json)
+-----------------------------
+
+Or really any AS lookup between 65536 to 65541. (e.g. /autnum/65536)
+
+This is example-1.net but as an autnum. All the entities and their redactions are the same.

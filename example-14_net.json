@@ -321,8 +321,8 @@
       "name": {
         "description": "Registrant Phone"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='voice')]",
-      "method": "removal",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='voice')]",
+      "method": "partialValue",
       "reason": {
         "description": "Server policy"
       }
@@ -331,8 +331,8 @@
       "name": {
         "description": "Registrant Phone Ext"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='voice')]",
-      "method": "removal",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='voice')]",
+      "method": "partialValue",
       "reason": {
         "description": "Server policy"
       }
@@ -341,8 +341,8 @@
       "name": {
         "description": "Registrant Fax"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='fax')]",
-      "method": "removal",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='fax')]",
+      "method": "partialValue",
       "reason": {
         "description": "Server policy"
       }
@@ -351,8 +351,8 @@
       "name": {
         "description": "Registrant Fax Ext"
       },
-      "prePath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='fax')]",
-      "method": "removal",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[1].type=='fax')]",
+      "method": "partialValue",
       "reason": {
         "description": "Server policy"
       }

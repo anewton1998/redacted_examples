@@ -264,7 +264,7 @@
       "name": {
         "description": "Registrant Street"
       },
-      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')].label",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')][1].label",
       "pathLang": "jsonpath",
       "method": "partialValue",
       "reason": {
@@ -275,7 +275,7 @@
       "name": {
         "description": "Registrant City"
       },
-      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')].label",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')][1].label",
       "pathLang": "jsonpath",
       "method": "partialValue",
       "reason": {
@@ -286,7 +286,7 @@
       "name": {
         "description": "Registrant Postal Code"
       },
-      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')].label",
+      "postPath": "$.entities[?(@.roles[0]=='registrant')].vcardArray[1][?(@[0]=='adr')][1].label",
       "pathLang": "jsonpath",
       "method": "partialValue",
       "reason": {

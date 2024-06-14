@@ -3,9 +3,15 @@
     "rdap_level_0",
     "redacted"
   ],
-  "objectClassName": "domain",
-  "ldhName": "example-8.net",
-  "secureDNS": { "delegationSigned": false },
+  "objectClassName": "ip network",
+  "handle": "example-20.net",
+  "startAddress" : "192.168.0.0",
+  "endAddress" : "192.168.255.255",
+  "ipVersion" : "v4",
+  "name": "NET-RTR-1",
+  "type" : "DIRECT ALLOCATION",
+  "country" : "AU",
+  "status" : [ "active" ],
   "notices": [
     {
       "title": "Terms of Use",
@@ -19,12 +25,6 @@
         }
       ]
     }
-  ],
-  "nameservers": [
-    {
-      "objectClassName": "nameserver", "ldhName": "ns1.example.com" },
-    {
-      "objectClassName": "nameserver", "ldhName": "ns2.example.com" }
   ],
   "entities": [
     {
@@ -131,7 +131,7 @@
       "objectClassName": "entity",
       "handle": "XXXX",
       "roles": [
-        "registrant", "technical", "billing" 
+        "registrant"
       ],
       "vcardArray": [
         "vcard",
@@ -164,6 +164,50 @@
           ]
         ]
       ]
+    },
+    {
+      "objectClassName": "entity",
+      "handle": "YYYY",
+      "roles": [
+        "technical"
+      ],
+      "vcardArray": [
+        "vcard",
+        [
+          [
+            "version",
+            {},
+            "text",
+            "4.0"
+          ],
+          [
+            "fn",
+            {},
+            "text",
+            ""
+          ],
+          [
+            "org",
+            {},
+            "text",
+            "Example Inc."
+          ],
+          [
+            "adr",
+            {},
+            "text",
+            [
+              "",
+              "Suite 1234",
+              "4321 Rue Somewhere",
+              "Quebec",
+              "QC",
+              "G1V 2M2",
+              "Canada"
+            ]
+          ]
+        ]
+      ]
     }
   ],
   "events": [
@@ -177,10 +221,18 @@
       "eventAction": "expiration", "eventDate": "2021-06-03T04:00:00Z"
     }
   ],
-  "status": [
-    "server delete prohibited", "server update prohibited", "server transfer prohibited", "client transfer prohibited"
-  ],
   "redacted": [
+    {
+      "name": {
+        "description": "Registry Domain ID"
+      },
+      "prePath": "$.handle",
+      "pathLang": "jsonpath",
+      "method": "removal",
+      "reason": {
+        "description": "Server policy"
+      }
+    },
     {
       "name": {
         "description": "Registrant Name"
@@ -254,6 +306,65 @@
       "method": "removal",
       "reason": {
         "description": "Server policy"
+      }
+    },
+    {
+      "name": {
+        "description": "Technical Name"
+      },
+      "postPath": "$.entities[?(@.roles[0]=='technical')].vcardArray[1][?(@[0]=='fn')][3]",
+      "method": "emptyValue",
+      "reason": {
+        "description": "Server policy"
+      }
+    },
+    {
+      "name": {
+        "description": "Technical Email"
+      },
+      "prePath": "$.entities[?(@.roles[0]=='technical')].vcardArray[1][?(@[0]=='email')]",
+      "method": "removal",
+      "reason": {
+        "description": "Server policy"
+      }
+    },
+    {
+      "name": {
+        "description": "Technical Phone"
+      },
+      "prePath": "$.entities[?(@.roles[0]=='technical')].vcardArray[1][?(@[1].type=='voice')]",
+      "method": "removal",
+      "reason": {
+        "description": "Server policy"
+      }
+    },
+    {
+      "name": {
+        "description": "Technical Fax"
+      },
+      "prePath": "$.entities[?(@.roles[0]=='technical')].vcardArray[1][?(@[1].type=='fax')]",
+      "reason": {
+        "description": "Client request"
+      }
+    },
+    {
+      "name": {
+        "description": "Administrative Contact"
+      },
+      "prePath": "$.entities[?(@.roles[0]=='administrative')]",
+      "method": "removal",
+      "reason": {
+        "description": "Refer to the technical contact"
+      }
+    },
+    {
+      "name": {
+        "description": "Billing Contact"
+      },
+      "prePath": "$.entities[?(@.roles[0]=='billing')]",
+      "method": "removal",
+      "reason": {
+        "description": "Refer to the registrant contact"
       }
     }
   ]
