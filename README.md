@@ -197,3 +197,82 @@ AS65536 (example-21_net.json)
 Or really any AS lookup between 65536 to 65541. (e.g. /autnum/65536)
 
 This is example-1.net but as an autnum. All the entities and their redactions are the same.
+
+example-22.net (example-22_net.json)
+------------------------------------
+
+This example has a registrant entity with the following redactions:
+
+1. registrant name by empty value
+2. registrant phone by partial value
+3. registrant email by replacement value
+
+example-23.net (example-23_net.json)
+------------------------------------
+
+In this example, the `pathLang` is explicitly set to "jsonpath".
+This example has a registrant entity and the following redactions:
+
+1. domain handle by removal
+1. registrant name by empty value
+2. registrant phone by partial value
+3. registrant email by replacement value
+
+example-24.net (example-24_net.json)
+------------------------------------
+
+In this example, the `pathLang` is explicitly set to "none".
+This example has a registrant entity and the following redactions:
+
+1. domain handle by removal
+1. registrant name by empty value
+2. registrant phone by partial value
+3. registrant email by replacement value
+
+example-25.net (example-25_net.json)
+------------------------------------
+
+This example uses registered redactions (`name.type`).
+This example has a registrant and technical entity and the following redactions:
+
+1. domain handle by removal
+1. registry registrant ID by removal
+1. registrant name by empty value
+1. registrant organization by removal
+1. registrant street by empty value
+1. registrant city by empty value
+1. registrant postal code by empty value
+1. registrant phone by removal
+1. registrant phone ext by removal
+1. registrant fax by removal
+1. registrant phone ext by removal
+1. registrant email by removal
+1. registry tech ID by removal
+1. tech name by empty value
+1. tech phone by removal
+1. tech phone ext by removal
+1. tech email by removal
+
+example-26.net (example-26_net.json)
+------------------------------------
+
+This example uses registered redactions (`name.type`), but all `pathLang` values are set to "none".
+This example has a registrant and technical entity and the following redactions:
+
+1. domain handle by removal
+1. registry registrant ID by removal
+1. registrant name by empty value
+1. registrant organization by removal
+1. registrant street by empty value
+1. registrant city by empty value
+1. registrant postal code by empty value
+1. registrant phone by removal
+1. registrant phone ext by removal
+1. registrant fax by removal
+1. registrant phone ext by removal
+1. registrant email by removal
+1. registry tech ID by removal
+1. tech name by empty value
+1. tech phone by removal
+1. tech phone ext by removal
+1. tech email by removal
